@@ -12,11 +12,6 @@ import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
-/**
- *
- * @author Thiago
- */
-
 public class ApostadorDAO {
 
     private Session session;

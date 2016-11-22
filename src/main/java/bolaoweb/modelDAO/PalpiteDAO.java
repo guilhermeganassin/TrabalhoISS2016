@@ -9,10 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-/**
- *
- * @author Thiago
- */
+
 public class PalpiteDAO {
      private Session session;
   private Transaction trans;

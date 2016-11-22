@@ -8,11 +8,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- *
- * @author Thiago
- */
-
 @Entity
 @PrimaryKeyJoinColumn(name="id")
 @Table(name="apostador")

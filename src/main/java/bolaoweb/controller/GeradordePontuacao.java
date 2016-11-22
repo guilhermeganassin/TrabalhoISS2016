@@ -8,10 +8,6 @@ import bolaoweb.modelDAO.PalpiteDAO;
 import bolaoweb.modelDAO.PartidasDAO;
 import java.util.List;
 
-/**
- *
- * @author Thiago
- */
 public class GeradordePontuacao {
     private Apostador apostador = new Apostador();
   private ApostadorDAO apostadorDAO = new ApostadorDAO();

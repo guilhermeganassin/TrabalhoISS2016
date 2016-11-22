@@ -14,11 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
-/**
- *
- * @author Thiago
- */
-
 public class PalpiteBEAN {
 
   private Palpite palpite = new Palpite();
