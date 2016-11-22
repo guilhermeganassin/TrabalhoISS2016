@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:b="http://bootsfaces.net/ui">
+  <h:head>
+    <title>Cadastrar Time</title>
+  </h:head>
+  <h:body>
+    <ui:composition template="layout_padrao.xhtml">   
+      <ui:define name="content">
+        <style>
+          .input {
+            width: 100%;
+          }  
+
+          .erros{
+            color: red
+          }
+        </style> 
+        <h:form>
+          <b:container>
+            <h1><b>Cadastro de Time</b></h1> 
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="ID:"/>
+              </b:column>
+              <b:column span="5">
+                <h:inputText id="id" disabled="true" value="#{timesBEAN.equipe.id}"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Local de Origem:"/>
+              </b:column>
+              <b:column span="5">
+                  <h:selectOneMenu id="idLocalOrigem" value="#{timesBEAN.equipe.idLocalTime}" converter="bolaoweb.util.localOrigemConverter"
+                                                 required="true" requiredMessage="Local de Origem  é obrigatório!">
+                      <f:selectItems value="#{localOrigemBEAN.listarLocalOrigem()}" var="localOrigem"
+                                     itemValue="#{listaOrigem}" itemLabel="#{localOrigem.cidade}"></f:selectItems>
+                </h:selectOneMenu>
+                <h:message for="idLocalOrigem" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Nome:"/>
+              </b:column>
+              <b:column span="5">
+                <h:inputText id="nome" disabled="false" value="#{timesBEAN.equipe.nome}" required="true" requiredMessage=" *Nome da equipe é obrigatório" />
+                <h:message for="nome" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Tipo:"/>
+              </b:column>
+              <b:column span="10">
+                <h:selectOneMenu id="tipo" value="#{timesBEAN.equipe.tipo}">
+                  <f:selectItem itemValue="Time"/>
+                  <f:selectItem itemValue="Seleção"/>
+                </h:selectOneMenu>
+              </b:column>
+            </b:row> 
+            <br/>
+            <b:row>
+              <b:column span="2">
+                <h:commandButton value="Confirmar" action="#{timesBEAN.confirmaTime()}" styleClass="btn btn-primary input"/>
+              </b:column>
+              <b:column span="2">
+                <h:link outcome="consulta_time" value="Cancelar" styleClass="btn input" style="border-color: tomato"/>
+              </b:column>
+            </b:row>
+          </b:container>
+        </h:form>
+        <br/>
+        <center>
+          <h:link outcome="index" value="Retornar ao Menu Inicial"  styleClass="btn btn-primary"/>
+        </center>
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+
