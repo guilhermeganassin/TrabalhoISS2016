@@ -10,11 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-/**
- *
- * @author Bruno
- */
-
 @Entity
 @Table
 public class Times implements Serializable {

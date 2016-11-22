@@ -9,10 +9,6 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
-/**
- *
- * @author Bruno
- */
 
 public class CampeonatoDAO {
 

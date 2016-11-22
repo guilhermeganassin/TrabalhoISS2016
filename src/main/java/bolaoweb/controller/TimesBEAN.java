@@ -8,10 +8,6 @@ import bolaoweb.modelDAO.TimesDAO;
 import java.util.List;
 import java.util.Objects;
 
-/**
- *
- * @author Bruno
- */
 
 @ManagedBean
 @SessionScoped

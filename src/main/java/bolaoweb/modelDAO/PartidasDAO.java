@@ -13,10 +13,6 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
-/**
- *
- * @author Bruno
- */
 
 public class PartidasDAO {
     private Session sessao;

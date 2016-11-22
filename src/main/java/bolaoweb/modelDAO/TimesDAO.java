@@ -1,9 +1,5 @@
 package bolaoweb.modelDAO;
 
-/**
- *
- * @author Bruno
- */
 
 import bolaoweb.hibernate.HibernateUtil;
 import bolaoweb.model.Times;

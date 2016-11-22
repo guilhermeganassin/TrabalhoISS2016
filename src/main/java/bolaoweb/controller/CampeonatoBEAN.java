@@ -8,10 +8,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Bruno
- */
 
 @ManagedBean
 @SessionScoped
