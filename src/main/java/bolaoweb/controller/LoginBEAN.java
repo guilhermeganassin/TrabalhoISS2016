@@ -57,11 +57,11 @@ public class LoginBEAN {
         }
 
         apostadorTemp.setId(1);
-        apostadorTemp.setNome("Marcelo");
-        apostadorTemp.setSobrenome("Pinheiro");
+        apostadorTemp.setNome("teste");
+        apostadorTemp.setSobrenome("teste");
         apostadorTemp.setApelido("Teste");
-        apostadorTemp.setEmail("marcelo@teste.com.br");
-        apostadorTemp.setSenha("Pinheiro");
+        apostadorTemp.setEmail("teste@teste.com.br");
+        apostadorTemp.setSenha("teste");
         apostadorTemp.setPontuacao(0);
         apostadorTemp.setPontuacao(0);
        
