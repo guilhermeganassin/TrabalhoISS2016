@@ -11,6 +11,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
+
 public class ApostadorBEAN {
 
     private Apostador apostador = new Apostador();
@@ -59,7 +60,7 @@ public class ApostadorBEAN {
         }
         return true;
     }
-
+      //as classes não estão mais setadas como null
     public String inserirApostador() {
         apostadorDAO.inserirApostador(apostador);
         return "consulta_apostador";
