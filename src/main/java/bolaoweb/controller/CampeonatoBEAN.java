@@ -2,6 +2,7 @@ package bolaoweb.controller;
 
 import bolaoweb.model.Campeonato;
 import bolaoweb.modelDAO.CampeonatoDAO;
+
 import java.util.List;
 import java.util.Objects;
 import javax.faces.bean.ManagedBean;
@@ -60,64 +61,63 @@ public class CampeonatoBEAN {
         return true;
     }
 
-    public String inserirCampeonato(){
-        if ((campeonato.getDatafim() == null) || (campeonato.getDatainicio() == null)){
+    public String inserirCampeonato() {
+        if ((campeonato.getDatafim() == null) || (campeonato.getDatainicio() == null)) {
             return "cadastro_campeonato";
         }
-        
-        if (campeonato.getDatafim().before(campeonato.getDatainicio())){            
-           return "cadastro_campeonato";
-        } 
-        
+
+        if (validarData()) return "cadastro_campeonato";
+
         listaCampeonato = campeonatoDAO.getLista(campeonato.getNome());
-        if (listaCampeonato.size() > 0){
-          return "cadastro_campeonato";
-         }
-        
+        if (listaCampeonato.size() > 0) {
+            return "cadastro_campeonato";
+        }
+
         campeonatoDAO.inserirCampeonato(campeonato);
         return "consulta_campeonato";
     }
-    
-    public String editarCampeonato(){
-        if (campeonato.getDatafim().before(campeonato.getDatainicio())){            
-           return "cadastro_campeonato";
-        }        
-        
+
+    //Metodo de validação de data
+    private boolean validarData() {
+        if (campeonato.getDatafim().before(campeonato.getDatainicio())) {
+            return true;
+        }
+        return false;
+    }
+
+    public String editarCampeonato() {
+        if (validarData()) return "cadastro_campeonato";
+
         campeonatoDAO.editarCampeonato(campeonato);
         return "consulta_campeonato";
     }
-        
-    public String excluirCampeonato(Campeonato c){
+
+    public String excluirCampeonato(Campeonato c) {
         campeonatoDAO.excluirCampeonato(c);
         return "consulta_campeonato";
     }
 
-    public List listarCampeonato(){
+    public List listarCampeonato() {
         listaCampeonato = campeonatoDAO.getLista(filtro);
         return this.listaCampeonato;
     }
-     public List listaCampeonato(){
+
+    public List listaCampeonato() {
         listaCampeonato = campeonatoDAO.getList();
         return this.listaCampeonato;
     }
-    public String carregaCampeonato(Campeonato c){
+
+    public String carregaCampeonato(Campeonato c) {
         campeonato = c;
         return "cadastro_campeonato";
     }
-    
-    public String novoCampeonato(){
-        campeonato.setId(null);
-        campeonato.setNome(null);
-        campeonato.setEscopo(null);
-        campeonato.setDatainicio(null);
-        campeonato.setDatafim(null);
-        campeonato.setTipoPontos(null);
-        campeonato.setTipoMataMata(null);
-        campeonato.setObservacao(null);
+
+    public String novoCampeonato() {
+        campeonato = new Campeonato();
         return "cadastro_campeonato";
     }
 
-    public String confirmarCampeonato(){
+    public String confirmarCampeonato() {
         if (listaCampeonato.contains(campeonato)) {
             return editarCampeonato();
         }
