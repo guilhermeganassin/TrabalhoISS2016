@@ -1,4 +1,4 @@
-package bolao.controller;
+package bolaoweb.controller;
 
 import bolaoweb.model.Operador;
 import bolaoweb.modelDAO.OperadorDAO;
@@ -12,7 +12,7 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author Guilherme
+ * @author valeria
  */
 
 public class OperadorBEAN {
@@ -91,12 +91,7 @@ public class OperadorBEAN {
     }
     
     public String novoOperador(){
-        operador.setId(null);
-        operador.setNome(null);
-        operador.setSobrenome(null);
-        operador.setEmail(null);
-        operador.setSenha(null);
-        operador.setBoadmin(null);
+        operador = new Operador();
         return "cadastro_operador";
     }
 

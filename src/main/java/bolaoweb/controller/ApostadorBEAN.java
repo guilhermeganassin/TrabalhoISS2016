@@ -2,11 +2,11 @@ package bolaoweb.controller;
 
 import bolaoweb.model.Apostador;
 import bolaoweb.modelDAO.ApostadorDAO;
+
 import java.util.List;
 import java.util.Objects;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
 
 
 @ManagedBean
@@ -57,53 +57,40 @@ public class ApostadorBEAN {
         if (!Objects.equals(this.apostador, other.apostador)) {
             return false;
         }
-        
-      
-        
         return true;
     }
 
-   
-
-    public String inserirApostador(){
+    public String inserirApostador() {
         apostadorDAO.inserirApostador(apostador);
         return "consulta_apostador";
     }
-    
-    public String editarApostador(){
+
+    public String editarApostador() {
         apostadorDAO.editarApostador(apostador);
         return "consulta_apostador";
     }
-        
-    public String excluirApostador(Apostador c){
+
+    public String excluirApostador(Apostador c) {
         apostadorDAO.excluirApostador(c);
         return "consulta_apostador";
     }
 
-    public List listarApostador(){
+    public List listarApostador() {
         listaApostador = apostadorDAO.getLista(filtro);
         return this.listaApostador;
     }
 
-    public String carregaApostador(Apostador c){
+    public String carregaApostador(Apostador c) {
         apostador = c;
         return "cadastro_apostador";
     }
-    
-    public String novoApostador(){
-        apostador.setId(null);
-        apostador.setNome(null);
-        apostador.setSobrenome(null);        
-        apostador.setEmail(null);
-        apostador.setSenha(null);
-        apostador.setApelido(null);
-        apostador.setDatanascimento(null);
-        apostador.setPontuacao(0);
-        apostador.setPosicao(0);
+
+    public String novoApostador() {
+        apostador = new Apostador();
         return "cadastro_apostador";
     }
 
-    public String confirmarApostador(){
+    public String confirmarApostador() {
         if (listaApostador.contains(apostador)) {
             return editarApostador();
         }
