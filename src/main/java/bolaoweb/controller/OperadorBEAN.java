@@ -12,7 +12,7 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author valeria
+ * @author Guilherme
  */
 
 public class OperadorBEAN {
