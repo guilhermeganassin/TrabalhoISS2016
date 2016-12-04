@@ -75,7 +75,7 @@ public class LoginBEAN {
         operadorTemp.setSobrenome("adm");
         operadorTemp.setEmail("admin@teste.com.br");
         operadorTemp.setBoadmin(Boolean.TRUE);
-        operadorTemp.setSenha("Admin");
+        operadorTemp.setSenha("admin");
 
         if (listaOperador.isEmpty()){
             operadorDAO.inserirOperador(operadorTemp);
