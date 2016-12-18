@@ -65,13 +65,13 @@ public class LoginBEAN {
         apostadorTemp.setPontuacao(0);
         apostadorTemp.setPontuacao(0);
        
-        if (listaApostador.isEmpty()){
+        if (listaApostador.isEmpty()){ 
             apostadorDAO.inserirApostador(apostadorTemp);
         }
 
         operadorTemp.setId(1);
         operadorTemp.setId(1);
-        operadorTemp.setNome("Admin");
+        operadorTemp.setNome("admin");
         operadorTemp.setSobrenome("adm");
         operadorTemp.setEmail("admin@teste.com.br");
         operadorTemp.setBoadmin(Boolean.TRUE);

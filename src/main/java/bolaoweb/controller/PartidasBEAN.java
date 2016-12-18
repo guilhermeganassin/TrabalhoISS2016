@@ -62,10 +62,6 @@ public class PartidasBEAN {
         if (partidas.getDataPartida() == null){
             return "cadastro_partida";
         }
-        Date data = new Date();
-        if (partidas.getDataPartida().before(data)){
-            return "cadastro_partida";
-        }
         
         if(flagEditar){
             partidasDAO.updatePartida(partidas);
